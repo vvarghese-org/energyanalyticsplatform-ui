@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sullexis - Analytics App</title>
+	<link rel="icon" href="assets/images/favicon.png">
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/core.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/components.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	<script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+	<!-- /core JS files -->
+
+	<!-- CI APP JS files -->
+	<script type="text/javascript" src="assets/js/plugins/ui/moment/moment.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/sliders/ion_rangeslider.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/daterangepicker.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/visualization/echarts/echarts.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization&key=AIzaSyC2pRcfJa9LOKHYYpoAhZ3woQqYVA3CTyU"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/switchery.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+
+
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_select.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/core/app.js"></script>
+	<script type="text/javascript" src="assets/js/includes/analyticsapp.js"></script>
+	<!-- /CI APP JS files -->
+
+</head>
+
+<body>
+
+	<!-- Main Navigation -->
+	<div class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html"><img src="assets/images/sullexis-logo.png" alt=""></a>
+
+			<ul class="nav navbar-nav visible-xs-block">
+				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+				<li><a class="sidebar-mobile-detached-toggle"><i class="icon-grid7"></i></a></li>
+			</ul>
+		</div>
+
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+			<!--<ul class="nav navbar-nav">
+				<li>
+					<a class="sidebar-control sidebar-detached-hide hidden-xs" data-popup="tooltip" title="Hide Search Parameters" data-placement="bottom" data-container="body">
+						<i class="icon-transmission"></i>
+					</a>
+				</li>
+			</ul>-->
+
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="index.html">
+						<i class="icon-grid6 position-left"></i>
+						Wells
+					</a>
+				</li>
+
+				<li class="active">
+					<a href="analytics.html"><i class="icon-chart position-left"></i>
+						Sidetracks
+					</a>
+				</li>
+
+				<li>
+					<a href="spills.html"><i class="icon-chart position-left"></i>
+						Spills
+					</a>
+				</li>
+
+				<li>
+					<a href="search.html"><i class="icon-search4 position-left"></i>
+						Search Data
+					</a>
+				</li>
+				<li>
+					<a href="login.html" data-popup="tooltip" title="Logout" data-placement="bottom" data-container="body">
+						<i class="icon-switch"></i>
+						<span class="visible-xs-inline-block position-right">Logout</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /main Navigation -->
+
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Content area -->
+				<div class="content pl-20 pr-20 pb-20 pt-20">
+
+					<div class="tabbable">
+						<ul class="nav nav-tabs nav-justified nav-tabs-bottom">
+							<li class="active"><a href="#sullexis-analytics" data-toggle="tab"><i class="icon-chart position-left"></i> Competitor Intelligence Analytics</a></li>
+							<li class=""><a href="#superset-analytics" data-toggle="tab"><i class="icon-stats-bars2 position-left"></i> SuperSet Analytics</a></li>
+							<li class=""><a href="#tableau-analytics" data-toggle="tab"><i class="icon-stairs position-left"></i> Tableau Analytics</a></li>
+							<li class=""><a href="#datameer-analytics" data-toggle="tab"><i class="icon-wave position-left"></i> Datameer Analytics</a></li>
+						</ul>
+
+						<div class="tab-content">
+							<div class="tab-pane active fade in" id="sullexis-analytics">
+								<!-- Lateral Direction Comparison -->
+								<div class="panel panel-flat">
+									<div class="panel-heading">
+										<h5 class="panel-title">Sidetrack Efficiency Analysis</h5>
+										<div class="heading-elements">
+											<ul class="icons-list">
+												<li><a data-action="collapse"></a></li>
+												<li><a data-action="reload"></a></li>
+												<li><a data-action="close"></a></li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="panel-body">
+										<div class="col-md-6">
+											<!--<div id="reportrange" class="daterange-custom">
+												<div class="daterange-custom-display"></div>
+											</div>-->
+											<div id="ion-moment-basic" style="width:400px"></div>
+											<div id="multilateral-map" class="map-container" style="height:400px"></div>
+										</div>
+										<div class="col-md-6">
+											<div class="chart-container">
+												<div class="chart has-fixed-height" id="basic_columns"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /Lateral Direction Comparison -->
+
+								<div class="col-md-6">
+									<!-- Oasis scatter chart -->
+									<div class="panel panel-flat">
+										<div class="panel-heading">
+											<h5 class="panel-title">Lateral Length Fluid Use: Oasis vs. Competitor</h5>
+											<div class="heading-elements">
+												<ul class="icons-list">
+													<li><a data-action="collapse"></a></li>
+													<li><a data-action="reload"></a></li>
+													<li><a data-action="close"></a></li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="panel-body">
+											<div class="chart-container">
+												<div class="chart has-fixed-height" id="basic_scatter"></div>
+											</div>
+										</div>
+									</div>
+									<!-- /Oasis scatter chart -->
+								</div>
+
+								<div class="col-md-6">
+									<!-- Category scatter -->
+									<div class="panel panel-flat">
+										<div class="panel-heading">
+											<h5 class="panel-title">Per Stage Parameter Scatter</h5>
+											<div class="heading-elements">
+												<ul class="icons-list">
+													<li><a data-action="collapse"></a></li>
+													<li><a data-action="reload"></a></li>
+													<li><a data-action="close"></a></li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="panel-body">
+											<div class="chart-container">
+												<div class="chart has-fixed-height" id="category_scatter"></div>
+											</div>
+										</div>
+									</div>
+									<!-- /category scatter -->
+								</div>
+
+								<div class="col-md-6">
+									<!-- Nightingale roses width visible labels -->
+									<div class="panel panel-flat">
+										<div class="panel-heading">
+											<h5 class="panel-title">Oasis Well Production</h5>
+											<div class="heading-elements">
+												<ul class="icons-list">
+													<li><a data-action="collapse"></a></li>
+													<li><a data-action="reload"></a></li>
+													<li><a data-action="close"></a></li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="panel-body">
+											<div class="chart-container has-scroll">
+												<div class="chart has-fixed-height has-minimum-width" id="rose_diagram_visible"></div>
+											</div>
+										</div>
+									</div>
+									<!-- /nightingale roses width hidden labels -->
+								</div>
+
+								<div class="col-md-6">
+									<!-- Multiple funnels (overlay) -->
+									<div class="panel panel-flat">
+										<div class="panel-heading">
+											<h5 class="panel-title">Expected vs Actual Revenue: Well Type</h5>
+											<div class="heading-elements">
+												<ul class="icons-list">
+													<li><a data-action="collapse"></a></li>
+													<li><a data-action="reload"></a></li>
+													<li><a data-action="close"></a></li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="panel-body">
+											<div class="chart-container has-scroll">
+												<div class="chart has-fixed-height has-minimum-width" id="funnel_multiple_overlay"></div>
+											</div>
+										</div>
+									</div>
+									<!-- /multiple funnels (overlay) -->
+								</div>
+
+									<div class="clearfix"></div>
+								<!-- Stacked area chart -->
+								<div class="panel panel-flat">
+									<div class="panel-heading">
+										<h5 class="panel-title">Production by Lateral Length</h5>
+										<div class="heading-elements">
+											<ul class="icons-list">
+												<li><a data-action="collapse"></a></li>
+												<li><a data-action="reload"></a></li>
+												<li><a data-action="close"></a></li>
+											</ul>
+										</div>
+									</div>
+
+									<div class="panel-body">
+										<div class="chart-container">
+											<div class="chart has-fixed-height" id="stacked_area"></div>
+										</div>
+									</div>
+								</div>
+								<!-- /stacked area chart -->
+
+							</div>
+
+							<div class="tab-pane fade" id="superset-analytics">
+
+							</div>
+
+							<div class="tab-pane fade" id="tableau-analytics">
+
+							</div>
+
+							<div class="tab-pane fade" id="datameer-analytics">
+
+							</div>
+						</div>
+					</div>
+
+
+
+
+
+
+
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+
+</body>
+</html>

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sullexis - Search App</title>
+	<link rel="icon" href="assets/images/favicon.png">
+	<!-- Global stylesheets -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/core.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/components.css" rel="stylesheet" type="text/css">
+	<link href="assets/css/colors.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
+
+	<!-- Core JS files -->
+	<script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+	<!-- /core JS files -->
+
+	<!-- CI APP JS files -->
+	
+	<script type="text/javascript" src="assets/js/plugins/tables/footable/footable.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/widgets.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/effects.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/switchery.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pagination/bootpag.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/ui/moment/moment.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/daterangepicker.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_select.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/core/app.js"></script>
+	<script type="text/javascript" src="assets/js/includes/searchapp.js"></script>
+	<!-- /CI APP JS files -->
+
+</head>
+
+<body class="has-detached-left">
+
+	<!-- Main Navigation -->
+	<div class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="index.html"><img src="assets/images/sullexis-logo.png" alt=""></a>
+
+			<ul class="nav navbar-nav visible-xs-block">
+				<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+				<li><a class="sidebar-mobile-detached-toggle"><i class="icon-grid7"></i></a></li>
+			</ul>
+		</div>
+
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+			<ul class="nav navbar-nav">
+				<li>
+					<a class="sidebar-control sidebar-detached-hide hidden-xs" data-popup="tooltip" title="Hide Search Parameters" data-placement="bottom" data-container="body">
+						<i class="icon-transmission"></i>
+					</a>
+				</li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="index.html">
+						<i class="icon-grid6 position-left"></i>
+						Wells
+					</a>
+				</li>
+
+				<li>
+					<a href="analytics.html"><i class="icon-chart position-left"></i>
+						Sidetracks
+					</a>
+				</li>
+
+				<li>
+					<a href="spills.html"><i class="icon-chart position-left"></i>
+						Spills
+					</a>
+				</li>
+
+				<li class="active">
+					<a href="search.html"><i class="icon-search4 position-left"></i>
+						Search Data
+					</a>
+				</li>
+
+				<li>
+					<a href="login.html" data-popup="tooltip" title="Logout" data-placement="bottom" data-container="body">
+						<i class="icon-switch"></i>
+						<span class="visible-xs-inline-block position-right">Logout</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- /main Navigation -->
+
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			
+
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Content area -->
+				<div class="content search-content">
+					
+					<!-- Detached sidebar -->
+					<div class="sidebar-detached">
+						<div class="sidebar sidebar-default">
+							<div class="sidebar-content">
+
+								<!-- Sidebar search -->
+								<!--<div class="sidebar-category">
+									<div class="category-title">
+										<span>Search</span>
+										<ul class="icons-list">
+											<li><a href="#" data-action="collapse"></a></li>
+										</ul>
+									</div>
+
+									<div class="category-content">
+										<form action="#">
+											<div class="has-feedback has-feedback-left">
+												<input type="search" class="form-control" placeholder="Search">
+												<div class="form-control-feedback">
+													<i class="icon-search4 text-size-base text-muted"></i>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>-->
+								<!-- /sidebar search -->
+								
+								<!-- Daterange picker -->
+								<div class="sidebar-category">
+									<div class="category-title">
+										<span>Date Range</span>
+										<ul class="icons-list">
+											<li><a href="#" data-action="collapse"></a></li>
+										</ul>
+									</div>
+
+									<div class="category-content">
+										<div class="form-group">
+											<label>
+												<input type="checkbox" name="radio-dateselector" class="styled" checked="checked">
+												Completion Date
+											</label>
+
+											<label>
+												<input type="checkbox" name="radio-dateselector" class="styled">
+												First Production Date
+											</label>
+										</div>
+										<div class="text-center">
+										<div id="reportrange" class="daterange-custom">
+											<div class="daterange-custom-display"></div>
+										</div>
+										</div>
+									</div>
+								</div>
+								<!-- /daterange picker -->
+								
+								<!-- Data Source Selectors -->
+							<div class="sidebar-category">
+								<div class="category-title">
+									<span>Data Sources</span>
+									<ul class="icons-list">
+										<li><a href="#" data-action="collapse"></a></li>
+									</ul>
+								</div>
+
+								<div class="category-content">
+									<div class="form-group">
+										<label class="checkbox-inline">
+											<input type="checkbox" class="styled" checked="checked">
+											IHS
+										</label>
+
+										<label class="checkbox-inline">
+											<input type="checkbox" class="styled">
+											DI
+										</label>
+										<label class="checkbox-inline">
+											<input type="checkbox" class="styled" checked="checked">
+											NDIC
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="checkbox-inline">
+											<input type="checkbox" class="styled">
+											Form6
+										</label>
+										<label class="checkbox-inline">
+											<input type="checkbox" class="styled" checked="checked">
+											NDIC Prod
+										</label>
+									</div>
+									<div class="form-group">
+										<label class="checkbox-inline">
+											<input type="checkbox" class="styled">
+											FRACFOCUS
+										</label>
+										<label class="checkbox-inline">
+											<input type="checkbox" class="styled" checked="checked">
+											EUR Est.
+										</label>
+									</div>
+								</div>
+							</div>
+							<!-- /Data Source Selectors -->
+								
+							</div>
+						</div>
+					</div>
+		            <!-- /detached sidebar -->
+		            
+		            <div class="container-detached">
+		            	<div class="content-detached">
+							<div class="panel panel-flat">
+								<div class="panel-heading">
+									<h5 class="panel-title">Integrated Data Lake Search<a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
+									<div class="heading-elements">
+									</div>
+								</div>
+
+								<div class="panel-body">
+									<form action="#" class="main-search">
+										<div class="input-group content-group">
+											<div class="has-feedback has-feedback-left">
+												<input type="text" class="form-control input-xlg" placeholder="Type Search Text Here...">
+												<div class="form-control-feedback">
+													<i class="icon-search4 text-muted text-size-base"></i>
+												</div>
+											</div>
+
+											<div class="input-group-btn">
+												<button type="submit" class="btn bg-teal-400 btn-xlg">Search</button>
+											</div>
+										</div>
+
+										<!--<div class="row search-option-buttons">
+											<div class="col-sm-6">
+												<ul class="list-inline list-inline-condensed no-margin-bottom">
+													<li class="dropdown">
+														<a href="#" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+															<i class="icon-stack2 position-left"></i> All categories <span class="caret"></span>
+														</a>
+
+														<ul class="dropdown-menu">
+															<li><a href="#"><i class="icon-question7"></i> Getting started</a></li>
+															<li><a href="#"><i class="icon-accessibility"></i> Registration</a></li>
+															<li><a href="#"><i class="icon-reading"></i> General info</a></li>
+															<li><a href="#"><i class="icon-gear"></i> Your settings</a></li>
+															<li><a href="#"><i class="icon-graduation"></i> Copyrights</a></li>
+															<li class="divider"></li>
+															<li><a href="#"><i class="icon-mail-read"></i> Contacting authors</a></li>
+														</ul>
+													</li>
+													<li><a href="#" class="btn btn-link"><i class="icon-reload-alt position-left"></i> Refine your search</a></li>
+												</ul>
+											</div>
+
+											<div class="col-sm-6 text-right">
+												<ul class="list-inline no-margin-bottom">
+													<li><a href="#" class="btn btn-link"><i class="icon-make-group position-left"></i> Browse website</a></li>
+													<li><a href="#" class="btn btn-link"><i class="icon-menu7 position-left"></i> Advanced search</a></li>
+												</ul>
+											</div>
+										</div>-->
+									</form>
+								</div>
+							</div>
+							
+							<div class="panel panel-default border-grey">
+								<div class="panel-heading">
+									<h6 class="panel-title">Search Results For: <small class="ml-20 text-slate">mortimer duke</small><a class="heading-elements-toggle"><i class="icon-more"></i></a></h6>
+									<div class="heading-elements">
+										<span class="badge bg-teal-300 heading-text">157 Results</span>
+									</div>
+								</div>
+
+								<div class="panel-body no-padding">
+									<div class="tabbable">
+										<ul class="nav nav-tabs nav-tabs-top top-divided nav-justified no-margin-bottom">
+											<li class="active"><a href="#alldata-tab" data-toggle="tab">All Data Sources </a></li>
+											<li><a href="#ihs-tab" data-toggle="tab">IHS Database </a></li>
+											<li class="disabled"><a href="#di-tab" data-toggle="tab">DI Database </a></li>
+											<li><a href="#ndic-tab" data-toggle="tab">NDIC Data </a></li>
+											<li><a href="#form6-tab" data-toggle="tab">Form 6 </a></li>
+											<li class="disabled"><a href="#ndicp-tab" data-toggle="tab">NDIC Production </a></li>
+											<li class="disabled"><a href="#ff-tab" data-toggle="tab">FRACFOCUS </a></li>
+											<li class="disabled"><a href="#eur-tab" data-toggle="tab">EUR Estimates </a></li>
+										</ul>
+									<div class="tab-content">
+									<div class="tab-pane active fade in" id="alldata-tab">
+									<table class="table table-toggle-responsive table-hover table-framed">
+										<thead>
+											<tr>
+												<th data-toggle="true">#</th>
+												<th data-toggle="true">File Info</th>
+												<th data-hide="phone">Date of Info</th>
+												<th data-hide="phone,tablet">Data Source</th>
+												<th class="text-center" style="width: 30px;"><i class="icon-menu-open2"></i></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>
+													<div class="media-left">
+														<div class=""><a class="text-default text-semibold efpEntity" id="file-modal-opener">IHS File Name</a></div>
+														<div class="text-muted text-size-small">This is a snippet of text from the document index. This is a snippet of text from the document index. </div>
+													</div>
+												</td>
+												<td>
+													<span>Document Date: </span><div class="text-muted">2017-01-13</div>
+												</td>
+												<td>IHS Database</td>
+												<td class="text-center">
+													<ul class="icons-list">
+														<li class="dropdown">
+															<a class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li class="dropdown-header highlight">Options:</li>
+																<li><a href=""><i class="icon-toggle"></i>Option 1</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 2</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 3</a></li>
+															</ul>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>
+													<div class="media-left">
+														<div class=""><a href="" class="text-default text-semibold efpEntity">DI File Name</a></div>
+														<div class="text-muted text-size-small">This is a snippet of text from the document index. This is a snippet of text from the document index. </div>
+													</div>
+												</td>
+												<td>
+													<span>Document Date: </span><div class="text-muted">2017-01-13</div>
+												</td>
+												<td>DI Database</td>
+												<td class="text-center">
+													<ul class="icons-list">
+														<li class="dropdown">
+															<a class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li class="dropdown-header highlight">Options:</li>
+																<li><a href=""><i class="icon-toggle"></i>Option 1</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 2</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 3</a></li>
+															</ul>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td>
+													<div class="media-left">
+														<div class=""><a href="" class="text-default text-semibold efpEntity">NDIC File Name</a></div>
+														<div class="text-muted text-size-small">This is a snippet of text from the document index. This is a snippet of text from the document index. </div>
+													</div>
+												</td>
+												<td>
+													<span>Document Date: </span><div class="text-muted">2017-01-13</div>
+												</td>
+												<td>NDIC Database</td>
+												<td class="text-center">
+													<ul class="icons-list">
+														<li class="dropdown">
+															<a class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li class="dropdown-header highlight">Options:</li>
+																<li><a href=""><i class="icon-toggle"></i>Option 1</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 2</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 3</a></li>
+															</ul>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td>4</td>
+												<td>
+													<div class="media-left">
+														<div class=""><a href="" class="text-default text-semibold efpEntity">Form6 File Name</a></div>
+														<div class="text-muted text-size-small">This is a snippet of text from the document index. This is a snippet of text from the document index. </div>
+													</div>
+												</td>
+												<td>
+													<span>Document Date: </span><div class="text-muted">2017-01-13</div>
+												</td>
+												<td>Form6</td>
+												<td class="text-center">
+													<ul class="icons-list">
+														<li class="dropdown">
+															<a class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li class="dropdown-header highlight">Options:</li>
+																<li><a href=""><i class="icon-toggle"></i>Option 1</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 2</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 3</a></li>
+															</ul>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td>5</td>
+												<td>
+													<div class="media-left">
+														<div class=""><a href="" class="text-default text-semibold efpEntity">FRACFOCUS File Name</a></div>
+														<div class="text-muted text-size-small">This is a snippet of text from the document index. This is a snippet of text from the document index. </div>
+													</div>
+												</td>
+												<td>
+													<span>Document Date: </span><div class="text-muted">2017-01-13</div>
+												</td>
+												<td>FRACFOCUS</td>
+												<td class="text-center">
+													<ul class="icons-list">
+														<li class="dropdown">
+															<a class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li class="dropdown-header highlight">Options:</li>
+																<li><a href=""><i class="icon-toggle"></i>Option 1</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 2</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 3</a></li>
+															</ul>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td>6</td>
+												<td>
+													<div class="media-left">
+														<div class=""><a href="" class="text-default text-semibold efpEntity">EUR Estimates File Name</a></div>
+														<div class="text-muted text-size-small">This is a snippet of text from the document index. This is a snippet of text from the document index. </div>
+													</div>
+												</td>
+												<td>
+													<span>Document Date: </span><div class="text-muted">2017-01-13</div>
+												</td>
+												<td>EUR Estimates</td>
+												<td class="text-center">
+													<ul class="icons-list">
+														<li class="dropdown">
+															<a class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li class="dropdown-header highlight">Options:</li>
+																<li><a href=""><i class="icon-toggle"></i>Option 1</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 2</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 3</a></li>
+															</ul>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td>7</td>
+												<td>
+													<div class="media-left">
+														<div class=""><a href="" class="text-default text-semibold efpEntity">FRACFOCUS File Name</a></div>
+														<div class="text-muted text-size-small">This is a snippet of text from the document index. This is a snippet of text from the document index. </div>
+													</div>
+												</td>
+												<td>
+													<span>Document Date: </span><div class="text-muted">2017-01-13</div>
+												</td>
+												<td>FRACFOCUS</td>
+												<td class="text-center">
+													<ul class="icons-list">
+														<li class="dropdown">
+															<a class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li class="dropdown-header highlight">Options:</li>
+																<li><a href=""><i class="icon-toggle"></i>Option 1</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 2</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 3</a></li>
+															</ul>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td>8</td>
+												<td>
+													<div class="media-left">
+														<div class=""><a href="" class="text-default text-semibold efpEntity">IHS File Name</a></div>
+														<div class="text-muted text-size-small">This is a snippet of text from the document index. This is a snippet of text from the document index. </div>
+													</div>
+												</td>
+												<td>
+													<span>Document Date: </span><div class="text-muted">2017-01-13</div>
+												</td>
+												<td>IHS Databse</td>
+												<td class="text-center">
+													<ul class="icons-list">
+														<li class="dropdown">
+															<a class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li class="dropdown-header highlight">Options:</li>
+																<li><a href=""><i class="icon-toggle"></i>Option 1</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 2</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 3</a></li>
+															</ul>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td>9</td>
+												<td>
+													<div class="media-left">
+														<div class=""><a href="" class="text-default text-semibold efpEntity">NDIC File Name</a></div>
+														<div class="text-muted text-size-small">This is a snippet of text from the document index. This is a snippet of text from the document index. </div>
+													</div>
+												</td>
+												<td>
+													<span>Document Date: </span><div class="text-muted">2017-01-13</div>
+												</td>
+												<td>NDIC Database</td>
+												<td class="text-center">
+													<ul class="icons-list">
+														<li class="dropdown">
+															<a class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li class="dropdown-header highlight">Options:</li>
+																<li><a href=""><i class="icon-toggle"></i>Option 1</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 2</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 3</a></li>
+															</ul>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td>10</td>
+												<td>
+													<div class="media-left">
+														<div class=""><a href="" class="text-default text-semibold efpEntity">FRACFOCUS File Name</a></div>
+														<div class="text-muted text-size-small">This is a snippet of text from the document index. This is a snippet of text from the document index. </div>
+													</div>
+												</td>
+												<td>
+													<span>Document Date: </span><div class="text-muted">2017-01-13</div>
+												</td>
+												<td>FRACFOCUS</td>
+												<td class="text-center">
+													<ul class="icons-list">
+														<li class="dropdown">
+															<a class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i></a>
+															<ul class="dropdown-menu dropdown-menu-right">
+																<li class="dropdown-header highlight">Options:</li>
+																<li><a href=""><i class="icon-toggle"></i>Option 1</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 2</a></li>
+																<li><a href=""><i class="icon-toggle"></i>Option 3</a></li>
+															</ul>
+														</li>
+													</ul>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<div class="text-center m-20">
+									<ul class="pagination pagination-separated">
+										<li><a href="#">&lsaquo;</a></li>
+										<li class="active"><a href="#">1</a></li>
+										<li><a href="#">2</a></li>
+										<li><a href="#">3</a></li>
+										<li><a href="#">4</a></li>
+										<li><a href="#">5</a></li>
+										<li><a href="#">&rsaquo;</a></li>
+									</ul>
+									</div>
+									
+									</div>
+									
+									<div class="tab-pane active fade" id="ihs-tab">
+									</div>
+									
+									<div class="tab-pane active fade" id="di-tab">
+									</div>
+									
+									<div class="tab-pane active fade" id="ndic-tab">
+									</div>
+									
+									<div class="tab-pane active fade" id="form6-tab">
+									</div>
+									
+									<div class="tab-pane active fade" id="ndicp-tab">
+									</div>
+									
+									<div class="tab-pane active fade" id="ff-tab">
+									</div>
+									
+									<div class="tab-pane active fade" id="eur-tab">
+									</div>
+									
+									</div>
+								
+								</div>
+							</div>
+							
+							
+						</div>
+					</div>
+					
+					<!-- jQuery UI File dialog -->
+					<div id="file-modal" title="File: IHSfilename.doc">
+						<div class="col-md-4">
+							<div class="thumb">
+									<img src="assets/images/filetypes/msword.jpg" class="img-responsive img-rounded media-preview" alt="">
+							</div>
+						</div>
+						<div class="col-md-8"><p>This is a snippet of text from the document index. This is a snippet of text from the document index.</p></div>
+					</div>
+					<!-- /jQuery UI File dialog -->	
+					
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+
+</body>
+</html>
